@@ -1,0 +1,20 @@
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
+
+interface HeroProps {
+  imgData: StaticImageData;
+  imgAlt: string;
+  title: string;
+}
+
+export default function Hero({ imgData, imgAlt, title }: HeroProps) {
+  return (
+    <div className="relative h-screen">
+      <Image src={imgData} alt={imgAlt} fill style={{ objectFit: "cover" }} />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900" />
+      <div className="pt-48 flex justify-center items-center">
+        <h1 className="text-white text-6xl">hi</h1>
+      </div>
+    </div>
+  );
+}
